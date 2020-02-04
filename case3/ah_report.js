@@ -5,7 +5,7 @@
    Tutorial 10
    Case Problem 3
 
-   Author:  
+   Author:Nicholas Garcia  
    Date:   
    
    Filename: ah_report.js
@@ -27,15 +27,16 @@
       information for the donor
       
 */
+var donationTotal = 0;
+donors.forEach(calcSum);
+var summaryTable = "<table> \
+            <tr><th>Donors</th><td>"+donors.length+"</td></tr> \
+            <tr><th>Total Donations</th><td>$"+donationTotal.toLocaleString()+"</td></tr> \
+            </table>"
+document.getElementById("donationSummary").innerHTML = summaryTable;
 
-
-
-
-
-
-
-
-
+filter(findMajorDonors());
+var majorDonors = [];
 
 function calcSum(donorAmt) {
    donationTotal += donorAmt[9];
